@@ -26,5 +26,6 @@ jobs:
         run: dotnet build -c Release -o out
       - name: Push no NuGet
         run: |
+          dotnet pack --configuration Release
           cd out
-          dotnet nuget push PesquisaPublica.Shared\*.nupkg --api-key ${{ secrets.NUGET_TOKEN }} --source "https://nuget.pkg.github.com/silviobassi/index.json" --skip-duplicate
+          dotnet nuget push *.nupkg --api-key ${{ secrets.NUGET_TOKEN }} --source "https://nuget.pkg.github.com/silviobassi/index.json" --skip-duplicate
