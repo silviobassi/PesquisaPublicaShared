@@ -27,9 +27,7 @@ jobs:
         with:
           dotnet-version: 9.0.x
       - name: Restore dependencies
-        run: dotnet restore
-      - name: Add GitHub Packages Source
-        run: dotnet nuget add source https://nuget.pkg.github.com/silviobassi/index.json -n github -u ${{USERNAME.USER_NAME}}  -p ${{secrets.GITHUB_TOKEN}}
+        run: dotnet restore      
       - name: Geração de Pacote
         run: dotnet build -c Release -o out
       - name: Push no NuGet
