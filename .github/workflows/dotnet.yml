@@ -46,7 +46,7 @@ jobs:
           dotnet pack PesquisaPublica.Shared/ \
           --configuration Release \
           -p:PackageVersion=${{ needs.generate-version.outputs.new_version }} \
-          -p:RepositoryUrl=https://github.com/silviobassi/PesquisaPublica.Shared \
+          -p:RepositoryUrl=https://github.com/silviobassi/PesquisaPublicaShared \
           -o packages
         
       - name: Publish NuGet Package
