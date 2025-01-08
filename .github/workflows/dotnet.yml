@@ -49,7 +49,5 @@ jobs:
           -p:RepositoryUrl=https://github.com/silviobassi/PesquisaPublicaShared \
           -o packages
         
-      - name: Add NuGet Source
-        run: dotnet nuget add source --username ${{ secrets.USERNAME }} --password ${{ secrets.PUSH_NUGET }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/silviobassi/index.json"
       - name: Publish NuGet Package
         run: dotnet nuget push packages/*.nupkg --api-key ${{ secrets.PUSH_NUGET }} --source https://nuget.pkg.github.com/silviobassi/index.json
