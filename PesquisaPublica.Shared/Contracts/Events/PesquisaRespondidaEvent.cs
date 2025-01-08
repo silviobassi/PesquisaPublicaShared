@@ -1,6 +1,6 @@
 ﻿namespace PesquisaPublica.Shared.Contracts.Events;
 
-public record PesquisaRespondidaContractEvent
+public record PesquisaRespondidaEvent
 {
     public DateTime OccurredOn { get; init; }
     public long PesquisaId { get; init; }
