@@ -1,11 +1,11 @@
 ﻿namespace PesquisaPublica.Shared.Contracts.Events;
 
-public interface PesquisaRespondidaEvent
+public record PesquisaRespondidaEvent
 {
-    public DateTime OccurredOn { get; }
-    public long PesquisaId { get; }
-    public string? NomeRespondente { get; }
-    public string? EmailRespondente { get; }
-    public int IdadeRespondente { get; }
-    public HashSet<long> RespostasIds { get; }
+    public DateTime OccurredOn { get; init; }
+    public long PesquisaId { get; init; }
+    public string? NomeRespondente { get; init; }
+    public string? EmailRespondente { get; init; }
+    public int IdadeRespondente { get; init; }
+    public required HashSet<long> RespostasIds { get; init; }
 }
